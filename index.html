@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        /* Responsive image styling */
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .caption {
+            margin-top: 10px;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My GitHub Page</h1>
+        <p>This is a demo of how to display images</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Displaying an Image</h2>
+            
+            <!-- Method 1: Image in root directory -->
+            <div class="image-container">
+                <img src="pictures/santoor.jpg" 
+                     alt="Description of the image" 
+                     class="responsive-image"
+                     loading="lazy">
+                <p class="caption">Image from repository root</p>
+            </div>
+            
+            <!-- Method 2: Image in 'images' subfolder -->
+            <div class="image-container">
+                <img src="pictures/tonback.jpg" 
+                     alt="Another image description" 
+                     class="responsive-image"
+                     loading="lazy">
+                <p class="caption">Image from 'images' folder</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2023 My GitHub Page</p>
+    </footer>
+</body>
+</html>
