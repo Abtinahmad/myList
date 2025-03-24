@@ -49,3 +49,71 @@
     <!-- Your content goes here -->
 </body>
 </html>
+<div class="gallery-container">
+    <h2>Photo Gallery</h2>
+    <div class="photo-grid">
+        <!-- Photo with lightbox -->
+        <div class="photo-item">
+            <a href="images/photo1-large.jpg" class="lightbox-trigger">
+                <img src="images/photo1.jpg" alt="Concert photo">
+            </a>
+            <p>Live Performance</p>
+        </div>
+        <!-- Add more photos -->
+    </div>
+</div>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<style>
+    /* Lightbox Styles */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        text-align: center;
+    }
+    
+    .lightbox-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 80%;
+        margin-top: 5%;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    // Lightbox functionality
+    document.querySelectorAll('.lightbox-trigger').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = this.href;
+            lightbox.style.display = 'block';
+        });
+    });
+    
+    document.querySelector('.close-btn').addEventListener('click', function() {
+        document.getElementById('lightbox').style.display = 'none';
+    });
+</script>
